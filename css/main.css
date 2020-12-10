@@ -23,7 +23,7 @@ html {
  * These selection rule sets have to be separate.
  * Customize the background color to match your design.
  */
-
+/*
 ::-moz-selection {
     background: #b3d4fc;
     text-shadow: none;
@@ -33,7 +33,7 @@ html {
     background: #b3d4fc;
     text-shadow: none;
 }
-
+*/
 /*
  * A better looking default horizontal rule
  */
@@ -102,11 +102,15 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: Merriweather, sans-serif;
   padding: 0 2em;
-  font-size: 1.25em;
+  font-size: 1em;
   height: 100%;
   color: #fff;
+}
+
+p span {
+  font-family: 'Lora', sans-serif;
 }
 
 header,
@@ -128,8 +132,19 @@ header,
 footer,
 main {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  font-family: Merriweather;
+  padding-left:30px;
+}
+
+.content{
+  font-size: 1.3em;
+}
+
+.header {
+  font-size:1.3em;
+  color:#fff;
 }
 
 .flex-container {
@@ -141,18 +156,60 @@ main {
 }
 
 .flex-items {
-
   display: flex;
   justify-content: center;
   align-items: center;
-
+  padding-left:10px;
   color: #fff;
   line-height: 1.5em;
-  font-size: 1.6em;
-  background-color: #f16059;
-  width: 30%;
+  font-size: .7em;
+  background-color: #815e5e;
+  width: 26%;
   height: 200px;
 }
+
+#div-1, #div-2 {
+border-right: 1px solid #555;
+padding-right: 30px;
+}
+
+
+
+
+/* Style all font awesome social media icons */
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+
 
 /* ==========================================================================
    Helper classes
@@ -228,6 +285,9 @@ main {
     clear: both;
 }
 
+
+
+
 /* ==========================================================================
    EXAMPLE Media Queries for Responsive Design.
    These examples override the primary ('mobile first') styles.
@@ -235,16 +295,56 @@ main {
    ========================================================================== */
 
 /* If you'd like to try a different layout on Desktop and larger screens: */
+
+@media all and (min-width: 768px) {
+       .div-1, .div-2, .div-3 {
+         flex-basis: 30%;
+         font-size: 1em;
+       }
+
+       .flex-items{
+         width:28%;
+         font-size: .9em;
+       }
+
+       .div-1, .div-2 {
+      border-right: 1px solid #555;
+      padding-right: 30px;
+    }
+
+    .content{
+      font-size: 1.5em;
+    }
+
+    .header{
+      font-size: 1.8em;
+    }
+  }
+
+
+
 @media (min-width: 1200px) {
   #div-1,
-  #div-2{
+  #div-2, #div-3{
       /* set your flex value to 1 50% */
+      flex-basis: 30%;
+      font-size: 1.2em;
+  }
+
+  .content{
+    font-size: 1.7em;
+  }
+
+  .header{
+    font-size: 2em;
   }
 
   #div-3 {
     /* set your flex value to 1 100% */
   }
 }
+
+
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
